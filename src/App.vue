@@ -1,28 +1,54 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="row">
+      <rotate-button type="top" icon="github" @click="fn">Github</rotate-button>
+      <rotate-button type="right" icon="weibo" backgroundColor="orange">Weibo</rotate-button>
+      <rotate-button type="bottom" icon="weixin" width="150" backgroundColor="green">Weixin</rotate-button>
+      <rotate-button type="left" icon="qq" width="200" backgroundColor="blue">QQ</rotate-button>
+    </div>
+    <div class="row">
+      <poly-button icon="github"></poly-button>
+      <poly-button icon="weibo" color="orange"></poly-button>
+      <poly-button icon="weixin" color="green"></poly-button>
+      <poly-button icon="qq" color="blue"></poly-button>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  methods: {
+    fn () {
+      alert('toggle')
+    }
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .row {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e7e7e7;
+  }
+
+  .row > * {
+    margin-right: 20px;
+  }
+
+  .row:nth-child(odd) {
+    background-color: #fff;
+  }
+
+  .row:nth-child(even) {
+    background-color: #e7e7e7;
+  }
 </style>
