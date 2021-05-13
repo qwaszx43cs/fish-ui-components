@@ -9,3 +9,5 @@
 - 旋转按钮 `<rotate-button />`
 
 - 聚合按钮 `<poly-button />`
+
+3. BUG：Chrome浏览器旋转按钮文字移动BUG 待修复，Firefox无异常
